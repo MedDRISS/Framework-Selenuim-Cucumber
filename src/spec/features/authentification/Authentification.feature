@@ -2,10 +2,21 @@
 Feature: Orange - Authentification
   ETQ User je souhaite m'authentifier
 
-  @cnx
-  Scenario: Orange - Authentification
+  Background:
+  
     Given Open application
     When Set Username
     And Set Password
     And Click button Login
-    Then Show Page home
+    
+    
+    @cnx
+     Scenario: Orange - Authentification
+     Then Show Page home
+    @link1
+    Scenario: Click-link
+    When Click on Admin Link
+    
+    @link2
+    Scenario: Click-link
+    When Click on Dashbord Link

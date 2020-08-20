@@ -15,7 +15,7 @@ import cucumber.api.CucumberOptions;
 		//glue={""},
 		plugin= {"pretty","html:target/cucumber-html-report"},
 		snippets = SnippetType.CAMELCASE,
-		tags= {("@connexion2")},
+		tags= {("@cnx")},
 
 		monochrome = true
 		)
