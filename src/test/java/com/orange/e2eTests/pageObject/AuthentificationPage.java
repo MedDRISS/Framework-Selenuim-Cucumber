@@ -1,10 +1,27 @@
 package com.orange.e2eTests.pageObject;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+
+import com.orange.e2eTests.util.FileReaderManager;
 
 public class AuthentificationPage {
+	
+	WebDriver driver;
+	public AuthentificationPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+		
+	}
+	
+	public void navigate () {
+		FileReaderManager fileReaderMan = new FileReaderManager();
+		driver.get(FileReaderManager.getInstance().getApplicationUrl());
+		System.out.println("test url"+FileReaderManager.getInstance().getApplicationUrl());
+		}
 	
 	/*Locatorw*/
 	final static String USER_NAME_ID="txtUsername";
